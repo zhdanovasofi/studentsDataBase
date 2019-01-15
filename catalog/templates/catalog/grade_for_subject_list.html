@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Оценки студентов</h1>
+
+    {% if grade_for_subject_list %}
+    <ul>
+
+      {% for grade in grade_for_subject_list %}
+      <li>
+        {{ grade.students_id }} получил(a) оценку {{ grade.grade }} за {{grade.subject_id}} в {{grade.semestre}} семестре;
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>На факультете еще не было сессии.</p>
+    {% endif %}
+{% endblock %}

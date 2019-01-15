@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Преподаватели факультета</h1>
+
+    {% if tutor_list %}
+    <ul>
+
+      {% for tutor in tutor_list %}
+      <li>
+        {{ tutor.FIO }}, имеет звание {{ tutor.degree }};
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>На факультете пока нет преподавателей.</p>
+    {% endif %}
+{% endblock %}

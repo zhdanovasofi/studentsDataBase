@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Студенты факультета</h1>
+
+  <h3>Введите курс, информацию о котором вы хотите увидеть</h3>
+    <form action="search/" method="GET">
+  <p><input type="int" name="course"></p>
+  <p><input type="submit" value="ОК"></p>
+ </form>
+
+{% endblock %}

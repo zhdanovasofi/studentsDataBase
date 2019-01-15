@@ -1,0 +1,11 @@
+{% if student_list %}
+<ul>
+
+  {% for student in student_list %}
+  <li>
+
+    {{ student.FIO }} учится на {{ student.get_course }} курсе;
+  </li>
+  {% endfor %}
+
+</ul>

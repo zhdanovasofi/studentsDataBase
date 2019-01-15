@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h2>Успеваемость студента <br>
+      {{fio}}</h2>
+
+    {% if grades%}
+    <ul>
+      {%for grade in grades%}
+        <li>Предмет : {{grade.subject_id}}<br>
+            Семестр: {{grade.semestre}}<br>
+      Оценка: {{grade.grade}}  </li>
+      {%endfor%}
+    </ul>
+    {%else%}
+     <p>У студента еще не было сессии.</p>
+    {%endif%}
+    <form action="back_form/" method="GET">
+      <input type="hidden" name="next" value="{{ request.path }}">
+  <p><input type="submit" value="Назад"></p>
+ </form>
+{% endblock %}
